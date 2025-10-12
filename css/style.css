@@ -117,6 +117,9 @@ body {
     border-radius: 10px; padding: 2rem; cursor: pointer;
     box-shadow: 0 0 40px -15px var(--hue-yellow);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column; /* İçerikleri alt alta sırala */
+    height: 100%;
 }
 .project-card:hover {
     transform: translateY(-10px);
@@ -183,10 +186,23 @@ body {
 
 /* --- FOOTER STYLES --- */
 .footer { padding: 2rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-.footer-container { display: flex; justify-content: space-between; align-items: center; }
-.footer-container p { color: var(--text-secondary); }
-.footer-links a { color: var(--text-secondary); text-decoration: none; margin-left: 1.5rem; }
-.footer-links a:hover { color: var(--neon-cyan); }
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Öğeleri alt alta sırala */
+    align-items: center;   /* Yatayda ortala */
+    gap: 1rem;             /* Aralarına 1rem boşluk ekle */
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem; /* Linklerin kendi arasına boşluk ekle */
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    /* Artık margin-left'e gerek yok */
+}
 
 /* --- PERSPECTIVE GRID BACKGROUND --- */
 body::before {
@@ -211,6 +227,201 @@ body::before {
 @keyframes pan-grid {
     0% { transform: perspective(600px) rotateX(60deg) translateY(0) translateZ(0); }
     100% { transform: perspective(600px) rotateX(60deg) translateY(-20rem) translateZ(0); }
+}
+
+/* --- PROJECT MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Başlangıçta gizli */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+/* Modal içeriğinin stilleri */
+#modal-body-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--neon-cyan); /* Ana renk */
+    margin-bottom: 0.5rem;
+}
+#modal-body-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+#modal-body-content p, #modal-body-content li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+#modal-body-content ul {
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+#modal-body-content pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 1rem;
+}
+#modal-body-content code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- PROJECT DETAIL PAGE STYLES --- */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-detail .section-container {
+    padding: 2rem 3rem;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-header h1 {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    color: var(--neon-yellow);
+}
+
+.project-header h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.project-header .quote {
+    font-style: italic;
+    margin-top: 1.5rem;
+    color: var(--text-primary);
+}
+
+.project-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    margin: 2rem 0;
+}
+
+.project-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.project-main-content h2 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--neon-yellow);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+.project-main-content:first-child h2 { margin-top: 0; }
+
+.project-screenshots {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.project-screenshots img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-sidebar h2 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--neon-yellow);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.tech-stack-list li {
+    margin-bottom: 0.75rem;
+}
+
+.project-link-button {
+    display: block;
+    text-align: center;
+    background-color: var(--neon-yellow) !important;
+    color: var(--dark-blue) !important;
+    border-color: var(--neon-yellow) !important;
+}
+
+/* Proje Detay Sayfası Konteyner Parlaması */
+.project-page .section-container {
+    box-shadow: 0 0 80px -15px var(--hue-yellow);
+}
+.project-page .section-container:hover {
+    box-shadow: 0 0 100px 0px var(--hue-yellow);
+}
+
+/* Proje Detay Sayfası Nav Link Hover Rengi */
+.project-page .nav-link:hover {
+    color: var(--neon-yellow);
 }
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
