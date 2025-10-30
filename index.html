@@ -48,22 +48,48 @@
     </header>
 
     <main>
-        <section id="hero" class="section hero">
+        <section id="hero" class="section hero" data-animate="true">
             <div class="section-container container">
                 <div class="hero-container">
                     <div class="hero-text">
                         <h1 class="hero-title">EMRE KOLBAKIR</h1>
-                        <p class="hero-subtitle">Computer Science Undergraduate | AI/ML Developer</p>
+                        <p class="hero-subtitle">
+                            <span class="typewriter">
+                                <span class="typewriter-text"
+                                    data-phrases='["BSc in Computer Science","AI/ML Developer","Computer Vision Specialist"]'>
+                                    BSc in Computer Science
+                                </span>
+                            </span>
+                        </p>
                         <p class="hero-description">
                             Specializing in Artificial Intelligence and Machine Learning, with a strong focus on
                             Computer Vision. I am passionate about developing intelligent systems that can perceive and
                             interpret visual data to solve complex, real-world problems.
                         </p>
                         <div class="hero-links">
-                            <a href="https://github.com/EmreKolbakir" target="_blank" class="hero-link">GitHub</a>
-                            <a href="https://linkedin.com/in/emre-kolbakır-0a2631278" target="_blank"
-                                class="hero-link">LinkedIn</a>
-                            <a href="assets/cv/EmreKolbakır-CV.pdf" class="hero-link" download>CV</a>
+                            <a href="https://github.com/EmreKolbakir" target="_blank" class="hero-link">
+                                <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M12 1.5c-5.79 0-10.5 4.71-10.5 10.5 0 4.64 3.01 8.57 7.18 9.97.53.1.72-.23.72-.51 0-.25-.01-1.07-.02-1.94-2.92.64-3.53-1.23-3.53-1.23-.48-1.22-1.18-1.54-1.18-1.54-.97-.66.07-.65.07-.65 1.07.08 1.63 1.1 1.63 1.1.95 1.63 2.48 1.16 3.08.89.1-.69.37-1.16.68-1.43-2.33-.27-4.78-1.17-4.78-5.22 0-1.15.41-2.09 1.08-2.83-.11-.27-.47-1.35.1-2.81 0 0 .88-.28 2.88 1.08a10.05 10.05 0 0 1 5.24 0c2-1.36 2.88-1.08 2.88-1.08.57 1.46.21 2.54.1 2.81.67.74 1.08 1.68 1.08 2.83 0 4.06-2.45 4.95-4.79 5.21.38.33.72.98.72 1.99 0 1.44-.01 2.61-.01 2.96 0 .28.19.62.73.51A10.51 10.51 0 0 0 22.5 12c0-5.79-4.71-10.5-10.5-10.5Z" />
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/emre-kolbakır-0a2631278" target="_blank" class="hero-link">
+                                <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M20.45 3H3.55C3.25 3 3 3.25 3 3.55v16.9c0 .3.25.55.55.55h16.9c.3 0 .55-.25.55-.55V3.55c0-.3-.25-.55-.55-.55ZM8.21 18.3H5.9V9.76h2.3V18.3ZM7.06 8.67a1.33 1.33 0 1 1 0-2.66 1.33 1.33 0 0 1 0 2.66Zm11.24 9.63h-2.3v-3.93c0-.94-.02-2.14-1.3-2.14-1.3 0-1.5 1.02-1.5 2.07v4h-2.3V9.76h2.21v1.17h.03c.31-.6 1.05-1.24 2.16-1.24 2.31 0 2.74 1.52 2.74 3.49v5.12Z" />
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="assets/cv/EmreKolbakır-CV.pdf" class="hero-link" download>
+                                <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M6.75 3A1.75 1.75 0 0 0 5 4.75v14.5c0 .97.78 1.75 1.75 1.75h10.5A1.75 1.75 0 0 0 19 19.25V8.62a1.75 1.75 0 0 0-.49-1.21l-4.12-4.12A1.75 1.75 0 0 0 13.18 3H6.75Zm6.25 4.5V4.56l3.94 3.94H13Z" />
+                                    <path fill="currentColor"
+                                        d="M8.75 13.5h6.5a.75.75 0 0 0 0-1.5h-6.5a.75.75 0 0 0 0 1.5ZM8.75 16.5h6.5a.75.75 0 0 0 0-1.5h-6.5a.75.75 0 0 0 0 1.5Z" />
+                                </svg>
+                                <span>CV</span>
+                            </a>
                         </div>
                     </div>
                     <div class="hero-image-container">
@@ -73,7 +99,7 @@
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projects" class="section" data-animate="true">
             <h2 class="section-title">Projects</h2>
             <div class="section-container container">
                 <div class="projects-grid">
@@ -85,35 +111,61 @@
                             <span class="project-details-link">View Details</span>
                         </div>
                     </a>
-                    <a href="#" class="project-card-link">
+                    <a href="projects/project-nvidia-stock.html" class="project-card-link">
                         <div class="project-card">
-                            <h3 class="project-title">Real-Time Object Detection</h3>
-                            <p class="project-description">A computer vision tool for real-time object tracking and
-                                classification using YOLOv5 and OpenCV.</p>
+                            <h3 class="project-title">NVIDIA Stock Price Forecasting</h3>
+                            <p class="project-description">Next-day NVDA forecasts that blend market signals with news
+                                sentiment, featuring automated reports, charts, and reproducible pipelines.</p>
                             <span class="project-details-link">View Details</span>
                         </div>
                     </a>
-                    <a href="#" class="project-card-link">
+                    <div class="project-card-link">
                         <div class="project-card">
-                            <h3 class="project-title">Plant Disease Detection & Severity Analysis</h3>
-                            <p class="project-description">A system for analyzing diseases and their severity on plant leaves 
-                                using a multi-task deep learning model that performs simultaneous classification and segmentation. </p>
-                            <span class="project-details-link">View Details</span>
+                            <h3 class="project-title">Dermatological Vision Analysis System (DermaVision)</h3>
+                            <p class="project-description">Upcoming update: skin lesion risk scoring with Grad-CAM visual feedback.</p>
+                            <span class="project-details-link">Details coming soon</span>
                         </div>
-                    </a>
-                    <a href="#" class="project-card-link">
+                    </div>
+                    <div class="project-card-link">
                         <div class="project-card">
-                            <h3 class="project-title">Face Recognition System</h3>
-                            <p class="project-description">A computer vision system for facial recognition using OpenCV
-                                and a dnn module for deep learning-based recognition.</p>
-                            <span class="project-details-link">View Details</span>
+                            <h3 class="project-title">Crowd Sensing & Entry–Exit Analytics (FlowTrack)</h3>
+                            <p class="project-description">In progress: YOLOv8 + ByteTrack analytics for live crowd flow dashboards.</p>
+                            <span class="project-details-link">Details coming soon</span>
                         </div>
-                    </a>
+                    </div>
+                    <div class="project-card-link">
+                        <div class="project-card">
+                            <h3 class="project-title">Pulmonary Imaging Analysis System (PulmoScan)</h3>
+                            <p class="project-description">Soon: multimodal chest imaging triage with risk scores and Grad-CAM maps.</p>
+                            <span class="project-details-link">Details coming soon</span>
+                        </div>
+                    </div>
+                    <div class="project-card-link">
+                        <div class="project-card">
+                            <h3 class="project-title">Real-Time Posture & Fatigue Tracking</h3>
+                            <p class="project-description">Under development: Mediapipe skeleton analytics and ergonomic fatigue alerts.</p>
+                            <span class="project-details-link">Details coming soon</span>
+                        </div>
+                    </div>
+                    <div class="project-card-link">
+                        <div class="project-card">
+                            <h3 class="project-title">Personal Finance Analyzer</h3>
+                            <p class="project-description">Coming soon: FastAPI + Next.js personal budgeting with LLM-powered insights.</p>
+                            <span class="project-details-link">Details coming soon</span>
+                        </div>
+                    </div>
+                    <div class="project-card-link">
+                        <div class="project-card">
+                            <h3 class="project-title">Advanced Lane Detection Comparative System</h3>
+                            <p class="project-description">Planned: classical vs deep-learning lane detection benchmarking across road conditions.</p>
+                            <span class="project-details-link">Details coming soon</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section">
+        <section id="experience" class="section" data-animate="true">
             <h2 class="section-title">Work Experience</h2>
             <div class="section-container container">
                 <div class="experience-timeline">
@@ -191,36 +243,39 @@
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <h2 class="section-title">Skills & Tools</h2>
+        <section id="skills" class="section" data-animate="true">
+            <h2 class="section-title">Skills</h2>
             <div class="section-container container">
                 <div class="skills-wrapper">
                     <div class="skill-category">
-                        <h3>Programming Languages</h3>
+                        <h3>Core Programming</h3>
                         <div class="skills-list">
-                            <span>Python</span><span>Java</span><span>C</span><span>C++</span><span>C#</span><span>JavaScript</span><span>HTML/CSS</span>
+                            <span>Python</span><span>C++</span><span>C#</span><span>Java</span><span>JavaScript</span><span>HTML5/CSS3</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Frameworks & Libraries</h3>
+                        <h3>Machine Learning & Deep Learning</h3>
                         <div class="skills-list">
-                            <span>ROS</span><span>OpenCV</span><span>PCL</span><span>YOLOv5</span><span>NumPy</span><span>PyTorch</span><span>Hugging
-                                Face</span><span>scikit-learn</span>
+                            <span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Developer Tools & Platforms</h3>
+                        <h3>Computer Vision & Perception</h3>
                         <div class="skills-list">
-                            <span>Git</span><span>Linux</span><span>Unity</span><span>Unreal
-                                5</span><span>Gazebo</span><span>Blender</span><span>Oculus SDK</span><span>ZED
-                                SDK</span>
+                            <span>OpenCV</span><span>YOLOv5</span><span>ROS</span><span>PCL</span><span>TensorRT</span><span>MediaPipe</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Environments</h3>
+                        <div class="skills-list">
+                            <span>Git</span><span>Linux</span><span>Doceker</span><span>Unreal 5</span><span>Blender</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section" data-animate="true">
             <h2 class="section-title">Get In Touch</h2>
             <div class="section-container container">
                 <div class="contact-wrapper">
@@ -248,7 +303,7 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: NVIDIA Stock Forecasting | Emre Kolbakir</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png">
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="project-page">
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">EK</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html#projects" class="nav-link">Back to Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section project-detail" data-animate="true">
+            <div class="section-container container">
+                
+                <div class="project-header">
+                    <h1>📈 NVIDIA Stock Forecasting</h1>
+                    <h3>News-aware NVDA price prediction with automated reporting and reproducible pipelines</h3>
+                    <p class="quote">“Blend market signals with sentiment to anticipate the next trading day.”</p>
+                </div>
+                
+                <hr class="project-divider">
+
+                <div class="project-content-grid">
+                    <div class="project-main-content">
+                        <h2>Screenshots</h2>
+                        <div class="project-screenshots">
+                            <img src="../assets/images/Nvidia-Forecast-Weekly.svg" alt="Weekly NVDA forecast chart">
+                            <img src="../assets/images/Nvidia-Forecast-Recent.svg" alt="Recent NVDA forecast chart">
+                        </div>
+
+                        <h2>Motivation</h2>
+                        <p>I wanted to move beyond pure price-based models and ask: how much can carefully curated
+                            market news improve next-day forecasts? This project merges traditional technical indicators
+                            with granular sentiment features to keep the pipeline explainable, reproducible, and update-ready.</p>
+
+                        <h2>Key Results (28 Oct 2025)</h2>
+                        <table class="project-table">
+                            <thead>
+                                <tr>
+                                    <th>Window</th>
+                                    <th>RMSE</th>
+                                    <th>MAE</th>
+                                    <th>MAPE</th>
+                                    <th>R²</th>
+                                    <th>Directional Accuracy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Test (daily)</td>
+                                    <td>8.18</td>
+                                    <td>5.61</td>
+                                    <td>2.87%</td>
+                                    <td>0.12</td>
+                                    <td>100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Pipeline Highlights</h2>
+                        <ul>
+                            <li>Aggregates Yahoo Finance OHLCV data, Alpha Vantage news sentiment, and optional FRED macro rates.</li>
+                            <li>Feature engineering blends lagged returns, RSI/MACD, Bollinger ranges, SPY-relative spreads, and rolling sentiment deltas.</li>
+                            <li>Chronological split (70/15/15) feeds a grid search over Random Forest & Gradient Boosting regressors.</li>
+                            <li>Selected model (Random Forest) refit on train+validation and exported for reproducible predictions.</li>
+                            <li>Automated reports include metrics JSON, CSV snapshots, and interactive Plotly dashboards in `reports/`.</li>
+                        </ul>
+
+                        <h2>What I Learned</h2>
+                        <ul>
+                            <li>Fine-tuning sentiment windows is critical — too long causes drift, too short ignores context.</li>
+                            <li>Maintaining deterministic pipelines (config-driven, versioned artefacts) speeds up stakeholder reviews.</li>
+                            <li>Direction-of-move accuracy can outperform raw error metrics when aligning with trading decisions.</li>
+                        </ul>
+                    </div>
+                    
+                    <aside class="project-sidebar">
+                        <h2>🧱 Tech Stack</h2>
+                        <ul class="tech-stack-list">
+                            <li><strong>Language:</strong> Python 3.10</li>
+                            <li><strong>Libraries:</strong> pandas, scikit-learn, plotly, yfinance, statsmodels</li>
+                            <li><strong>Sentiment:</strong> Alpha Vantage NEWS_SENTIMENT</li>
+                            <li><strong>Orchestration:</strong> Config-driven scripts + Make targets</li>
+                            <li><strong>Testing:</strong> pytest (pipeline smoke + feature checks)</li>
+                        </ul>
+                        <a href="https://github.com/EmreKolbakir/nvidia-stock-prediction-model" target="_blank" class="contact-button project-link-button">View on GitHub</a>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            <p>&copy; 2025 Emre Kolbakır. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+
+</body>
+</html>
